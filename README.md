@@ -18,3 +18,5 @@ This project will require you to model many-to-many relationships and also to be
 # in config/environments/development.rb, add line config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 # rails generate devise User
 # rails db:migrate
+# set root path in routes to <root "events#index">
+
