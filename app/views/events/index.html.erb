@@ -1,0 +1,17 @@
+<h1>Events#index</h1>
+
+<% if @events.any? %>
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <%= link_to event.name, events_path(post) %> <!-- Link to show individual post -->
+        <p><%= event.desc.truncate(100) %></p> <!-- Display a truncated version of the post content -->
+       <!-- <% if user_signed_in? %> 
+            <p><%=post.user.name%></p>
+         <% end %> -->
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No events available.</p>
+<% end %>
