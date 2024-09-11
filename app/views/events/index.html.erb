@@ -4,10 +4,10 @@
   <ul>
     <% @events.each do |event| %>
       <li>
-        <%= link_to event.name, events_path(post) %> <!-- Link to show individual post -->
+        <%= link_to event.name, events_path(event) %> <!-- Link to show individual post -->
         <p><%= event.desc.truncate(100) %></p> <!-- Display a truncated version of the post content -->
         <% if user_signed_in? %> 
-            <<p><%=event.user.name%></p>
+            <<p><%=event.creator_id.name%></p>
         <% end %>
       </li>
     <% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Create Event </h1>
+    <% if @event.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@event.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+            <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= form_with model: @event do |form| %>
+        <div>
+            <%= form.label :name, "Enter your title" %>
+            <%= form.text_field :name, placeholder: "floorball"%>
+        </div>
+        <div>
+            <%= form.label :desc %>
+            <%= form.text_field :desc, placeholder: "A game of sticks and balls" %>
+        </div>
+         <div>
+            <%= form.label :date %>
+            <%= form.date_field :date %>
+        </div>
+        <%= form.submit %>
+    <% end %>
+</body>
+</html>
