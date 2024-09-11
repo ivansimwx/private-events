@@ -77,6 +77,8 @@ Add rubocop to improve readability of ode
 # rails generate migration AddNameToUsers name:string OR just modify devise's migration file
 # rails db:migrate
 # rails generate devise:controllers users -c registrations
+# change devise_for in config/routes to
+-> devise_for :users, :controllers => { registrations: 'users/registrations' }
 # uncomment the following lines in devise's users' controller
 -> before_action :configure_sign_up_params, only: [:create]
 -> def create
