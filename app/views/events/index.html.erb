@@ -6,9 +6,9 @@
       <li>
         <%= link_to event.name, events_path(post) %> <!-- Link to show individual post -->
         <p><%= event.desc.truncate(100) %></p> <!-- Display a truncated version of the post content -->
-       <!-- <% if user_signed_in? %> 
-            <p><%=post.user.name%></p>
-         <% end %> -->
+        <% if user_signed_in? %> 
+            <<p><%=event.user.name%></p>
+        <% end %>
       </li>
     <% end %>
   </ul>
@@ -16,11 +16,11 @@
   <p>No events available.</p>
 <% end %>
 
-<!-- <%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Event', new_event_path %>
 <br>
 <% if user_signed_in? %>
   <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
 <% end %>
 <% unless user_signed_in? %>
   <%= link_to 'Sign In/Up', new_user_registration_path, class: 'btn btn-primary' %>
-<% end %> -->
+<% end %>
